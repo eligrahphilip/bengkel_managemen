@@ -8,7 +8,6 @@ const fs = require("fs");
 const session = require("express-session");
 
 const app = express();
-const PORT = 3000;
 
 // ====================
 // Middleware
