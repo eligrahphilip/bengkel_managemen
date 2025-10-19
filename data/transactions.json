@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1760895964754,
+    "tanggal": "2025-10-20",
+    "keterangan": "Shockbreaker terjual (KYB)",
+    "jumlah": 420000,
+    "jenis": "income",
+    "barang": "Shockbreaker",
+    "merek": "KYB",
+    "qty": 1,
+    "kategori": "oli"
+  },
+  {
+    "id": 1760896070600,
+    "tanggal": "2025-10-20",
+    "keterangan": "Oli terjual (MPX)",
+    "jumlah": 296000,
+    "jenis": "income",
+    "barang": "Oli",
+    "merek": "MPX",
+    "qty": 8,
+    "kategori": "oli"
+  },
+  {
+    "id": 1760896105012,
+    "tanggal": "2025-10-20",
+    "keterangan": "Oli terjual (MPX)",
+    "jumlah": 380000,
+    "jenis": "income",
+    "barang": "Oli",
+    "merek": "MPX",
+    "qty": 10,
+    "kategori": "oli"
+  },
+  {
+    "id": 1760896766254,
+    "tanggal": "2025-10-20",
+    "keterangan": "gaji felix",
+    "jumlah": 1000000,
+    "jenis": "expense",
+    "kategori": "gaji"
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "merek": "Yamaha",
+    "tipe": "Original",
+    "ukuran": "Vario 125",
+    "harga": 85000,
+    "stok": 15
+  },
+  {
+    "id": 2,
+    "merek": "Yamaha",
+    "tipe": "Original",
+    "ukuran": "NMax 155",
+    "harga": 120000,
+    "stok": 12
+  },
+  {
+    "id": 3,
+    "merek": "Yamaha",
+    "tipe": "Original",
+    "ukuran": "X-Ride",
+    "harga": 75000,
+    "stok": 18
+  },
+  {
+    "id": 4,
+    "merek": "Yamaha",
+    "tipe": "Racing",
+    "ukuran": "R15",
+    "harga": 150000,
+    "stok": 8
+  },
+  {
+    "id": 5,
+    "merek": "Yamaha",
+    "tipe": "Racing",
+    "ukuran": "MT-25",
+    "harga": 180000,
+    "stok": 6
+  },
+  {
+    "id": 6,
+    "merek": "Honda",
+    "tipe": "Original",
+    "ukuran": "Beat",
+    "harga": 80000,
+    "stok": 20
+  },
+  {
+    "id": 7,
+    "merek": "Honda",
+    "tipe": "Original",
+    "ukuran": "Scoopy",
+    "harga": 85000,
+    "stok": 18
+  },
+  {
+    "id": 8,
+    "merek": "Honda",
+    "tipe": "Original",
+    "ukuran": "PCX",
+    "harga": 110000,
+    "stok": 14
+  },
+  {
+    "id": 9,
+    "merek": "Honda",
+    "tipe": "Racing",
+    "ukuran": "CBR150R",
+    "harga": 140000,
+    "stok": 9
+  },
+  {
+    "id": 10,
+    "merek": "Honda",
+    "tipe": "Racing",
+    "ukuran": "CBR250RR",
+    "harga": 200000,
+    "stok": 5
+  },
+  {
+    "id": 11,
+    "merek": "Suzuki",
+    "tipe": "Original",
+    "ukuran": "Satria F150",
+    "harga": 90000,
+    "stok": 16
+  },
+  {
+    "id": 12,
+    "merek": "Suzuki",
+    "tipe": "Original",
+    "ukuran": "Nex",
+    "harga": 78000,
+    "stok": 19
+  },
+  {
+    "id": 13,
+    "merek": "Suzuki",
+    "tipe": "Racing",
+    "ukuran": "GSX-R150",
+    "harga": 160000,
+    "stok": 7
+  },
+  {
+    "id": 14,
+    "merek": "Suzuki",
+    "tipe": "Racing",
+    "ukuran": "GSX-S150",
+    "harga": 155000,
+    "stok": 8
+  },
+  {
+    "id": 15,
+    "merek": "Kawasaki",
+    "tipe": "Original",
+    "ukuran": "Ninja 150",
+    "harga": 130000,
+    "stok": 11
+  },
+  {
+    "id": 16,
+    "merek": "Kawasaki",
+    "tipe": "Original",
+    "ukuran": "KLX 150",
+    "harga": 95000,
+    "stok": 13
+  },
+  {
+    "id": 17,
+    "merek": "Kawasaki",
+    "tipe": "Racing",
+    "ukuran": "Ninja 250",
+    "harga": 220000,
+    "stok": 4
+  },
+  {
+    "id": 18,
+    "merek": "Kawasaki",
+    "tipe": "Racing",
+    "ukuran": "ZX-25R",
+    "harga": 280000,
+    "stok": 3
+  },
+  {
+    "id": 19,
+    "merek": "Brembo",
+    "tipe": "Performance",
+    "ukuran": "Universal",
+    "harga": 350000,
+    "stok": 6
+  },
+  {
+    "id": 20,
+    "merek": "EBC",
+    "tipe": "Performance",
+    "ukuran": "Universal",
+    "harga": 320000,
+    "stok": 7
+  }
+]

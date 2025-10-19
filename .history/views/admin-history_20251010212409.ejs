@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/admin/admin-history.css">
+
+<header>
+  <h2>📜 Riwayat Transaksi</h2>
+  <a href="/logout" class="logout-btn">Logout</a>
+</header>
+
+<main class="history-page">
+  <table>
+    <thead>
+      <tr>
+        <th>Tanggal</th>
+        <th>Keterangan</th>
+        <th>Jenis</th>
+        <th>Jumlah (Rp)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% transactions.forEach(t => { %>
+        <tr>
+          <td><%= t.tanggal %></td>
+          <td><%= t.keterangan || '-' %></td>
+          <td class="<%= t.jenis === 'income' ? 'income' : 'expense' %>">
+            <%= t.jenis === "income" ? "Pemasukan" : "Pengeluaran" %>
+          </td>
+          <td>Rp <%= t.jumlah.toLocaleString() %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <div class="back-link">
+    <a href="/admin/menu">← Kembali ke Menu</a>
+  </div>
+</main>
+
+<%- include('partials/footer') %>

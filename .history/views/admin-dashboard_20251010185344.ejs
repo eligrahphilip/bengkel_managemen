@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Halo, <%= user.username %> (Admin)</h2>
+  <a href="/logout">Logout</a>
+  <h3>Tambah Transaksi</h3>
+  <form method="POST" action="/admin/add">
+    <label>Tanggal:</label>
+    <input type="date" name="tanggal" required>
+    <label>Barang:</label>
+    <input type="text" name="barang" required>
+    <label>Merek:</label>
+    <input type="text" name="merek" required>
+    <label>Tipe:</label>
+    <input type="text" name="tipe" required>
+    <label>Ukuran (Liter):</label>
+    <input type="text" name="ukuran" required>
+    <label>Jumlah:</label>
+    <input type="number" name="jumlah" required>
+    <label>Harga per unit:</label>
+    <input type="number" name="harga" step="0.01" required>
+    <button type="submit">Simpan</button>
+  </form>
+
+  <h3>History Transaksi</h3>
+  <table>
+    <tr>
+      <th>Tanggal</th>
+      <th>Barang</th>
+      <th>Merek</th>
+      <th>Tipe</th>
+      <th>Ukuran</th>
+      <th>Jumlah</th>
+      <th>Harga</th>
+      <th>Total</th>
+      <th>Aksi</th>
+    </tr>
+    <% transactions.forEach(t => { %>
+      <tr>
+        <td><%= t.tanggal %></td>
+        <td><%= t.barang %></td>
+        <td><%= t.merek %></td>
+        <td><%= t.tipe %></td>
+        <td><%= t.ukuran %></td>
+        <td><%= t.jumlah %></td>
+        <td><%= t.harga.toLocaleString() %></td>
+        <td><%= t.total.toLocaleString() %></td>
+        <td><a href="/admin/delete/<%= t.id %>">Hapus</a></td>
+      </tr>
+    <% }) %>
+  </table>
+
+  <a href="/report">Lihat Laporan</a>
+</body>
+</html>

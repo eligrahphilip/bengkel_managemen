@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Keuangan</title>
+  <link rel="stylesheet" href="/css/admin/report.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <h1 class="app-title">Bengkel Management</h1>
+    <ul class="navbar-menu">
+      <li><a href="/admin/menu">Dashboard</a></li>
+      <li><a href="/admin/income">Pemasukan</a></li>
+      <li><a href="/admin/expense">Pengeluaran</a></li>
+      <li><a href="/admin/history">Riwayat</a></li>
+      <li><a href="/report" class="active">Laporan</a></li>
+      <li><a href="/admin/stock">Kelola Stok</a></li>
+    </ul>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main class="report-page">
+    <!-- 🔹 Filter Tabs -->
+    <div class="filter-tabs">
+      <a href="/report?range=day">Harian</a>
+      <a href="/report?range=week">Mingguan</a>
+      <a href="/report?range=month">Bulanan</a>
+
+      <form method="GET" action="/report" class="custom-range">
+        <input type="date" name="start" required />
+        <input type="date" name="end" required />
+        <button type="submit">Terapkan</button>
+      </form>
+    </div>
+
+    <!-- 💰 Ringkasan Keuangan -->
+    <div class="summary">
+      <div class="summary-card income">
+        <h3>Total Pemasukan</h3>
+        <div class="amount">Rp <span id="totalIncome">0</span></div>
+      </div>
+      <div class="summary-card expense">
+        <h3>Total Pengeluaran</h3>
+        <div class="amount">Rp <span id="totalExpense">0</span></div>
+      </div>
+      <div class="summary-card balance">
+        <h3>Saldo Akhir</h3>
+        <div class="amount">Rp <span id="saldoAkhir">0</span></div>
+      </div>
+    </div>
+
+    <!-- 🔄 Navigasi Tombol -->
+    <div class="slider-nav">
+      <button id="prevBtn">◀</button>
+      <span id="sectionIndicator">Distribusi Keuangan</span>
+      <button id="nextBtn">▶</button>
+    </div>
+
+    <!-- 📊 Section Container -->
+    <div class="section-container">
+      <!-- Diagram Donat -->
+      <section class="analysis-section" data-index="0">
+        <h2>Distribusi Keuangan</h2>
+        <div class="chart-container">
+          <canvas id="distributionChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Breakdown Pengeluaran -->
+      <section class="analysis-section" data-index="1" style="display: none;">
+        <h2>Breakdown Pengeluaran</h2>
+        <table class="breakdown-table">
+          <thead>
+            <tr>
+              <th>Kategori</th>
+              <th>Total (Rp)</th>
+            </tr>
+          </thead>
+          <tbody id="breakdownBody">
+            <tr><td colspan="2" style="color: gray;">Memuat data...</td></tr>
+          </tbody>
+        </table>
+        <div class="chart-container">
+          <canvas id="expensePieChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Analisis Penjualan -->
+      <section class="analysis-section" data-index="2" style="display: none;">
+        <h2>Analisis Penjualan</h2>
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <h3>Total Penjualan Hari Ini</h3>
+            <p>Rp <span id="dayIncome">0</span></p>
+          </div>
+          <div class="analysis-card">
+            <h3>Total Penjualan Minggu Ini</h3>
+            <p>Rp <span id="weekIncome">0</span></p>
+          </div>
+          <div class="analysis-card">
+            <h3>Total Penjualan Bulan Ini</h3>
+            <p>Rp <span id="monthIncome">0</span></p>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="salesBarChart"></canvas>
+        </div>
+        <h3>Barang Paling Laku</h3>
+        <ul id="topItems">
+          <li>Hari Ini: -</li>
+          <li>Minggu Ini: -</li>
+          <li>Bulan Ini: -</li>
+        </ul>
+        <h3>Barang Kurang Laku</h3>
+        <ul id="lowItems">
+          <li>Hari Ini: -</li>
+          <li>Minggu Ini: -</li>
+          <li>Bulan Ini: -</li>
+        </ul>
+      </section>
+
+      <!-- Analisis Cash Flow -->
+      <section class="analysis-section" data-index="3" style="display: none;">
+        <h2>Analisis Cash Flow</h2>
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <h3>Cash Flow Hari Ini</h3>
+            <p>Rp <span id="cashDay">0</span></p>
+          </div>
+          <div class="analysis-card">
+            <h3>Cash Flow Minggu Ini</h3>
+            <p>Rp <span id="cashWeek">0</span></p>
+          </div>
+          <div class="analysis-card">
+            <h3>Cash Flow Bulan Ini</h3>
+            <p>Rp <span id="cashMonth">0</span></p>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="cashflowLineChart"></canvas>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Bengkel Management System — UTS IF451</p>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    // Navigasi antar section
+    const sections = Array.from(document.querySelectorAll(".analysis-section"));
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const sectionIndicator = document.getElementById("sectionIndicator");
+    let currentSection = 0;
+
+    const sectionNames = [
+      "Distribusi Keuangan",
+      "Breakdown Pengeluaran",
+      "Analisis Penjualan",
+      "Analisis Cash Flow"
+    ];
+
+    function showSection(index) {
+      sections.forEach((section, i) => {
+        section.style.display = i === index ? "block" : "none";
+      });
+      sectionIndicator.textContent = sectionNames[index];
+    }
+
+    showSection(currentSection);
+    nextBtn.addEventListener("click", () => {
+      if (currentSection < sections.length - 1) {
+        currentSection++;
+        showSection(currentSection);
+      }
+    });
+    prevBtn.addEventListener("click", () => {
+      if (currentSection > 0) {
+        currentSection--;
+        showSection(currentSection);
+      }
+    });
+
+    // Ambil parameter dari URL
+    const params = new URLSearchParams(window.location.search);
+    const range = params.get("range");
+    const start = params.get("start");
+    const end = params.get("end");
+
+    // ===== Ambil Data dari Server =====
+    let url = "/api/report/detailed";
+    const query = [];
+    if (range) query.push("range=" + range);
+    if (start && end) query.push("start=" + start + "&end=" + end);
+    if (query.length > 0) url += "?" + query.join("&");
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        // Update ringkasan utama
+        document.getElementById("totalIncome").textContent = data.totalIncome.toLocaleString();
+        document.getElementById("totalExpense").textContent = data.totalExpense.toLocaleString();
+        document.getElementById("saldoAkhir").textContent = data.saldo.toLocaleString();
+
+      // ===== DONUT CHART (balik seperti versi lama) =====
+      const ctx = document.getElementById("distributionChart").getContext("2d");
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: ["Pemasukan", "Pengeluaran"],
+          datasets: [{
+            data: [data.totalIncome, data.totalExpense],
+            backgroundColor: [
+              "rgba(52, 211, 153, 0.9)", // hijau lembut
+              "rgba(239, 68, 68, 0.9)"  // merah lembut
+            ],
+            borderColor: "#fff",
+            borderWidth: 3,
+            hoverOffset: 8,
+            cutout: "85%" // tebal seperti versi lama
+          }]
+        },
+        options: {
+          responsive: true,
+          animation: {
+            animateRotate: true,
+            animateScale: true
+          },
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { color: "#333", boxWidth: 20, padding: 10 }
+            },
+            tooltip: {
+              callbacks: {
+                label: function (ctx) {
+                  return ctx.label + ": Rp " + ctx.formattedValue;
+                }
+              }
+            }
+          }
+        }
+      });
+
+        // Breakdown pengeluaran
+        const tbody = document.getElementById("breakdownBody");
+        tbody.innerHTML = "";
+        const cats = Object.entries(data.expenseBreakdown || {});
+        if (cats.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="2" style="color:gray;">Tidak ada pengeluaran</td></tr>`;
+        } else {
+          cats.forEach(([cat, val]) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `<td>${cat.toUpperCase()}</td><td>Rp ${val.toLocaleString()}</td>`;
+            tbody.appendChild(tr);
+          });
+        }
+
+        const expenseCtx = document.getElementById("expensePieChart").getContext("2d");
+        new Chart(expenseCtx, {
+          type: "pie",
+          data: {
+            labels: cats.map(c => c[0]),
+            datasets: [{
+              data: cats.map(c => c[1]),
+              backgroundColor: ["#ef4444", "#f97316", "#eab308", "#22c55e", "#3b82f6", "#a855f7"]
+            }]
+          },
+          options: { plugins: { legend: { position: "bottom" } } }
+        });
+
+        // Analisis penjualan
+        document.getElementById("dayIncome").textContent = data.dayIncome.toLocaleString();
+        document.getElementById("weekIncome").textContent = data.weekIncome.toLocaleString();
+        document.getElementById("monthIncome").textContent = data.monthIncome.toLocaleString();
+
+        document.getElementById("topItems").innerHTML = `
+          <li>Hari Ini: ${data.dayTop[0]} (${data.dayTop[1]})</li>
+          <li>Minggu Ini: ${data.weekTop[0]} (${data.weekTop[1]})</li>
+          <li>Bulan Ini: ${data.monthTop[0]} (${data.monthTop[1]})</li>
+        `;
+        document.getElementById("lowItems").innerHTML = `
+          <li>Hari Ini: ${data.dayLow[0]} (${data.dayLow[1]})</li>
+          <li>Minggu Ini: ${data.weekLow[0]} (${data.weekLow[1]})</li>
+          <li>Bulan Ini: ${data.monthLow[0]} (${data.monthLow[1]})</li>
+        `;
+
+        const salesCtx = document.getElementById("salesBarChart").getContext("2d");
+        new Chart(salesCtx, {
+          type: "bar",
+          data: {
+            labels: ["Harian", "Mingguan", "Bulanan"],
+            datasets: [{
+              label: "Total Penjualan",
+              data: [data.dayIncome, data.weekIncome, data.monthIncome],
+              backgroundColor: "rgba(59,130,246,0.7)"
+            }]
+          },
+          options: { plugins: { legend: { display: false } } }
+        });
+
+        // Analisis Cash Flow
+        document.getElementById("cashDay").textContent = data.cashflowDay.toLocaleString();
+        document.getElementById("cashWeek").textContent = data.cashflowWeek.toLocaleString();
+        document.getElementById("cashMonth").textContent = data.cashflowMonth.toLocaleString();
+
+        const cashCtx = document.getElementById("cashflowLineChart").getContext("2d");
+        new Chart(cashCtx, {
+          type: "line",
+          data: {
+            labels: ["Hari Ini", "Minggu Ini", "Bulan Ini"],
+            datasets: [{
+              label: "Cash Flow (Rp)",
+              data: [data.cashflowDay, data.cashflowWeek, data.cashflowMonth],
+              borderColor: "rgba(34,197,94,0.9)",
+              fill: false,
+              tension: 0.2
+            }]
+          },
+          options: { plugins: { legend: { position: "bottom" } } }
+        });
+      })
+      .catch(err => {
+        console.error("Gagal memuat laporan:", err);
+        alert("Gagal memuat laporan keuangan. Pastikan server.js sudah jalan.");
+      });
+  </script>
+</body>
+</html>

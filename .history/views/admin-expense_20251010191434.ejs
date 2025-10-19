@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pencatatan Pengeluaran</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Pencatatan Pengeluaran</h2>
+  <form method="POST" action="/admin/add">
+    <input type="hidden" name="jenis" value="expense">
+    <label>Tanggal:</label>
+    <input type="date" name="tanggal" required>
+    <label>Keterangan:</label>
+    <input type="text" name="keterangan" required>
+    <label>Jumlah (Rp):</label>
+    <input type="number" name="jumlah" required>
+    <button type="submit">Simpan</button>
+  </form>
+  <a href="/admin/menu">← Kembali</a>
+</body>
+</html>

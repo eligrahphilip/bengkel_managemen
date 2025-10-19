@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Utama Admin</title>
+
+  <!-- CSS khusus halaman ini -->
+  <link rel="stylesheet" href="/css/admin/admin-menu.css" />
+</head>
+<body>
+  <!-- Header -->
+  <%- include('partials/header') %>
+
+  <main>
+    <div class="menu-container">
+      <a href="/admin/income" class="menu-card">
+        <span>💰</span>
+        <p>Pemasukan</p>
+      </a>
+
+      <a href="/admin/expense" class="menu-card">
+        <span>💸</span>
+        <p>Pengeluaran</p>
+      </a>
+
+      <a href="/admin/history" class="menu-card">
+        <span>📜</span>
+        <p>Riwayat Transaksi</p>
+      </a>
+
+      <a href="/report" class="menu-card">
+        <span>📊</span>
+        <p>Laporan Keuangan</p>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <%- include('partials/footer') %>
+</body>
+</html>

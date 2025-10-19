@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Data Oli</title>
+  <link rel="stylesheet" href="/css/admin/admin-stock.css">
+</head>
+<body>
+  <header>
+    <h2>✏️ Edit Data Oli</h2>
+    <a href="/admin/stock" class="back-btn">← Kembali</a>
+  </header>
+
+  <main>
+    <form id="editForm" method="POST" class="form-container">
+      <label>Merek:</label>
+      <input type="text" name="merek" id="merek" required>
+
+      <label>Tipe:</label>
+      <input type="text" name="tipe" id="tipe" required>
+
+      <label>Ukuran (L):</label>
+      <input type="text" name="ukuran" id="ukuran" required>
+
+      <label>Harga (Rp):</label>
+      <input type="number" name="harga" id="harga" required>
+
+      <label>Stok:</label>
+      <input type="number" name="stok" id="stok" required>
+
+      <button type="submit" class="save-btn">💾 Simpan</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Aplikasi Bengkel | UTS IF451 - Advance Web</p>
+  </footer>
+
+  <script>
+    // Ambil data item yang ingin diedit (bisa dari localStorage atau API)
+    const params = new URLSearchParams(window.location.search);
+    const index = params.get('index'); // contoh: /admin/stock/edit.html?index=2
+
+    // Misal kamu simpan data sementara di localStorage
+    const stockData = JSON.parse(localStorage.getItem('stockData') || '[]');
+    const item = stockData[index] || {};
+
+    // Isi form otomatis
+    document.getElementById('merek').value = item.merek || '';
+    document.getElementById('tipe').value = item.tipe || '';
+    document.getElementById('ukuran').value = item.ukuran || '';
+    document.getElementById('harga').value = item.harga || '';
+    document.getElementById('stok').value = item.stok || '';
+
+    // Tangani submit (bisa kirim ke backend API)
+    document.getElementById('editForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const updatedItem = {
+        merek: document.getElementById('merek').value,
+        tipe: document.getElementById('tipe').value,
+        ukuran: document.getElementById('ukuran').value,
+        harga: document.getElementById('harga').value,
+        stok: document.getElementById('stok').value
+      };
+      stockData[index] = updatedItem;
+      localStorage.setItem('stockData', JSON.stringify(stockData));
+      alert('✅ Data stok berhasil diperbarui!');
+      window.location.href = '/admin/stock';
+    });
+  </script>
+</body>
+</html>

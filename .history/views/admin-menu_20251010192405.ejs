@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Utama Admin</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f4f7;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #1E3A8A; /* 🔹 biru tua */
+    color: #ffffff;            /* 🔹 teks putih */
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #ffffff; /* pastikan teks tetap putih */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 🔹 biar nggak nyatu */
+  }
+
+  header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #E0E7FF; /* 🔹 biru muda lembut */
+  }
+
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .menu-card a {
+      display: block;
+      color: #2d3748;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .menu-card span {
+      font-size: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2d3748;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .logout {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .logout a {
+      color: white;
+      background: #e53e3e;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .logout a:hover {
+      background: #c53030;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Selamat Datang, <%= user.username %> 👋</h2>
+    <p>Dashboard Admin Bengkel</p>
+  </header>
+
+  <div class="menu-container">
+    <div class="menu-card">
+      <span>💰</span>
+      <a href="/admin/income">Pemasukan</a>
+    </div>
+
+    <div class="menu-card">
+      <span>💸</span>
+      <a href="/admin/expense">Pengeluaran</a>
+    </div>
+
+    <div class="menu-card">
+      <span>📜</span>
+      <a href="/admin/history">Riwayat Transaksi</a>
+    </div>
+
+    <div class="menu-card">
+      <span>📊</span>
+      <a href="/report">Laporan Keuangan</a>
+    </div>
+  </div>
+
+  <div class="logout">
+    <a href="/logout">Logout</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Aplikasi Bengkel | UTS IF451 - Advance Web</p>
+  </footer>
+</body>
+</html>

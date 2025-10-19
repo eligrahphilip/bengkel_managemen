@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "merek": "GS Battery",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX7A-BS",
+    "harga": 320000,
+    "stok": 8
+  },
+  {
+    "id": 2,
+    "merek": "GS Battery",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX9-BS",
+    "harga": 450000,
+    "stok": 6
+  },
+  {
+    "id": 3,
+    "merek": "GS Battery",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTZ7S",
+    "harga": 380000,
+    "stok": 7
+  },
+  {
+    "id": 4,
+    "merek": "GS Battery",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTZ10S",
+    "harga": 520000,
+    "stok": 4
+  },
+  {
+    "id": 5,
+    "merek": "GS Battery",
+    "tipe": "Standard",
+    "ukuran": "NS40ZL",
+    "harga": 280000,
+    "stok": 10
+  },
+  {
+    "id": 6,
+    "merek": "GS Battery",
+    "tipe": "Standard",
+    "ukuran": "NS60L",
+    "harga": 350000,
+    "stok": 8
+  },
+  {
+    "id": 7,
+    "merek": "Yuasa",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX7A-BS",
+    "harga": 350000,
+    "stok": 9
+  },
+  {
+    "id": 8,
+    "merek": "Yuasa",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX9-BS",
+    "harga": 480000,
+    "stok": 5
+  },
+  {
+    "id": 9,
+    "merek": "Yuasa",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTZ7S",
+    "harga": 400000,
+    "stok": 6
+  },
+  {
+    "id": 10,
+    "merek": "Yuasa",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTZ10S",
+    "harga": 550000,
+    "stok": 3
+  },
+  {
+    "id": 11,
+    "merek": "Yuasa",
+    "tipe": "Standard",
+    "ukuran": "NS40ZL",
+    "harga": 300000,
+    "stok": 12
+  },
+  {
+    "id": 12,
+    "merek": "Yuasa",
+    "tipe": "Standard",
+    "ukuran": "NS60L",
+    "harga": 370000,
+    "stok": 8
+  },
+  {
+    "id": 13,
+    "merek": "Federal",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX7A-BS",
+    "harga": 290000,
+    "stok": 11
+  },
+  {
+    "id": 14,
+    "merek": "Federal",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX9-BS",
+    "harga": 420000,
+    "stok": 7
+  },
+  {
+    "id": 15,
+    "merek": "Federal",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTZ7S",
+    "harga": 350000,
+    "stok": 9
+  },
+  {
+    "id": 16,
+    "merek": "Federal",
+    "tipe": "Standard",
+    "ukuran": "NS40ZL",
+    "harga": 250000,
+    "stok": 15
+  },
+  {
+    "id": 17,
+    "merek": "Federal",
+    "tipe": "Standard",
+    "ukuran": "NS60L",
+    "harga": 320000,
+    "stok": 10
+  },
+  {
+    "id": 18,
+    "merek": "Thunder",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX7A-BS",
+    "harga": 270000,
+    "stok": 13
+  },
+  {
+    "id": 19,
+    "merek": "Thunder",
+    "tipe": "Maintenance Free",
+    "ukuran": "YTX9-BS",
+    "harga": 400000,
+    "stok": 8
+  },
+  {
+    "id": 20,
+    "merek": "Thunder",
+    "tipe": "Standard",
+    "ukuran": "NS40ZL",
+    "harga": 230000,
+    "stok": 16
+  }
+]

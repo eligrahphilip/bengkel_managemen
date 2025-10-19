@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Riwayat Transaksi</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>📜 Riwayat Transaksi</h2>
+  <table>
+    <tr>
+      <th>Tanggal</th>
+      <th>Keterangan</th>
+      <th>Jenis</th>
+      <th>Jumlah (Rp)</th>
+    </tr>
+    <% transactions.forEach(t => { %>
+      <tr>
+        <td><%= t.tanggal %></td>
+        <td><%= t.keterangan %></td>
+        <td><%= t.jenis === "income" ? "Pemasukan" : "Pengeluaran" %></td>
+        <td><%= t.jumlah.toLocaleString() %></td>
+      </tr>
+    <% }) %>
+  </table>
+  <a href="/admin/menu">← Kembali</a>
+</body>
+</html>

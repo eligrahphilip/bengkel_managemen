@@ -1,0 +1,46 @@
+
+<link rel="stylesheet" href="/css/admin/report.css">
+
+<header>
+  <h2>📊 Laporan Keuangan</h2>
+  <a href="/logout" class="logout-btn">Logout</a>
+</header>
+
+<main class="report-page">
+  <table>
+    <thead>
+      <tr>
+        <th>Tanggal</th>
+        <th>Keterangan</th>
+        <th>Jenis</th>
+        <th>Jumlah (Rp)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% transactions.forEach(t => { %>
+        <tr>
+          <td><%= t.tanggal %></td>
+          <td><%= t.keterangan || '-' %></td>
+          <td class="<%= t.jenis === 'income' ? 'income' : 'expense' %>">
+            <%= t.jenis === "income" ? "Pemasukan" : "Pengeluaran" %>
+          </td>
+          <td>Rp <%= t.jumlah.toLocaleString() %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <div class="summary">
+    <h3>Total Pemasukan: <span class="income">Rp <%= totalIncome.toLocaleString() %></span></h3>
+    <h3>Total Pengeluaran: <span class="expense">Rp <%= totalExpense.toLocaleString() %></span></h3>
+    <h3>Saldo Akhir: <span class="<%= saldo >= 0 ? 'income' : 'expense' %>">
+      Rp <%= saldo.toLocaleString() %>
+    </span></h3>
+  </div>
+
+  <div class="back-link">
+    <a href="/admin/menu">← Kembali ke Menu</a>
+  </div>
+</main>
+
+<%- include('partials/footer') %>

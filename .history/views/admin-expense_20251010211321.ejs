@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pencatatan Pengeluaran</title>
+  <link rel="stylesheet" href="/css/admin/admin-expense.css" />
+</head>
+<body>
+  <header>
+    <h2>Pencatatan Pengeluaran</h2>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </header>
+
+  <main>
+    <form method="POST" action="/admin/add" class="expense-form">
+      <input type="hidden" name="jenis" value="expense" />
+
+      <label for="tanggal">Tanggal:</label>
+      <input type="date" id="tanggal" name="tanggal" required />
+
+      <label for="keterangan">Keterangan:</label>
+      <input type="text" id="keterangan" name="keterangan" placeholder="Contoh: Pembelian alat" required />
+
+      <label for="jumlah">Jumlah (Rp):</label>
+      <input type="number" id="jumlah" name="jumlah" placeholder="0" required />
+
+      <button type="submit">💾 Simpan</button>
+    </form>
+
+    <div class="back-link">
+      <a href="/admin/menu">← Kembali ke Menu</a>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

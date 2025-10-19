@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f3f4f6;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+form, table {
+  margin-top: 15px;
+}
+
+input, button {
+  margin: 5px;
+  padding: 6px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+}
+
+.error {
+  color: red;
+}

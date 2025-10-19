@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencatatan Pemasukan</title>
+  <link rel="stylesheet" href="/css/admin/admin-income.css">
+</head>
+<body>
+
+  <header>
+    <h2>Pencatatan Pemasukan</h2>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </header>
+
+  <main>
+    <div class="grid-container" id="barangGrid">
+      <div class="card" data-barang="Ban">🛞 Ban</div>
+      <div class="card" data-barang="Oli">🛢️ Oli</div>
+      <div class="card" data-barang="Tutup Pentil">🔘 Tutup Pentil</div>
+      <div class="card" data-barang="Van Belt">🔩 Van Belt</div>
+      <div class="card" data-barang="Kampas Rem">⚙️ Kampas Rem</div>
+      <div class="card" data-barang="Shockbreaker">🧩 Shockbreaker</div>
+      <div class="card" data-barang="Wiper">🧽 Wiper</div>
+      <div class="card" data-barang="Master Rem">🧯 Master Rem</div>
+      <div class="card" data-barang="Pilok">🎨 Pilok</div>
+      <div class="card" data-barang="Lampu">💡 Lampu Depan/Belakang/Sen</div>
+      <div class="card" data-barang="Spion">🪞 Spion</div>
+      <div class="card" data-barang="Gir Set">⚙️ Gir Set</div>
+      <div class="card" data-barang="Rantai">⛓️ Rantai</div>
+      <div class="card" data-barang="Cairan Rem">🧴 Cairan Rem</div>
+      <div class="card" data-barang="Air Radiator">💧 Air Radiator</div>
+      <div class="card" data-barang="Spakbor">🪖 Spakbor</div>
+      <div class="card" data-barang="Kap Motor">🛵 Kap/Batok Motor</div>
+      <div class="card" data-barang="Kabel Rem">🔌 Kabel Rem</div>
+      <div class="card" data-barang="Tali Gas Vespa">🪢 Tali Gas Vespa</div>
+      <div class="card" data-barang="Busi">🔥 Busi</div>
+      <div class="card" data-barang="Kabel Gas">🔧 Kabel Gas</div>
+      <div class="card" data-barang="Aki">🔋 Aki</div>
+      <div class="card" data-barang="Step Belakang">🦶 Step Belakang</div>
+      <div class="card" data-barang="Handgrip">✋ Handgrip</div>
+      <div class="card" data-barang="Carb Cleaner">🧼 Carb Cleaner</div>
+      <div class="card" data-barang="Bersihin Karat">🧽 Bersihin Karat</div>
+      <div class="card" data-barang="Handle Rem">🖐️ Handle Rem</div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3 id="modalTitle">Tambah Transaksi</h3>
+      <form method="POST" action="/admin/add" id="transaksiForm">
+        <input type="hidden" name="jenis" value="income">
+        <input type="hidden" name="barang" id="barangInput">
+
+        <label>Tanggal:</label>
+        <input type="date" name="tanggal" required>
+
+        <div id="detailFields"></div>
+
+        <button type="submit">Simpan</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="exit-container">
+    <a href="/admin/menu" class="exit-btn">← Kembali ke Menu</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Aplikasi Bengkel | UTS IF451 - Advance Web</p>
+  </footer>
+
+  <script src="/js/admin/admin-income.js"></script>
+</body>
+</html>

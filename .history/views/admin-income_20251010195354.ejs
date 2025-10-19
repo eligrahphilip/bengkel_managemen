@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pemasukan - Bengkel</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f4f7;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1E3A8A;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .logout-btn {
+      background-color: #e53e3e;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #c53030;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: #f0f4ff;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2d3748;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #1E3A8A;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #2b4ae0;
+    }
+
+    .close {
+      float: right;
+      font-size: 18px;
+      color: #555;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Pencatatan Pemasukan</h2>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </header>
+
+  <div class="grid-container" id="barangGrid">
+    <!-- Semua daftar barang -->
+    <div class="card" data-barang="Ban">🛞 Ban</div>
+    <div class="card" data-barang="Oli">🛢️ Oli</div>
+    <div class="card" data-barang="Tutup Pentil">🔘 Tutup Pentil</div>
+    <div class="card" data-barang="Van Belt">🔩 Van Belt</div>
+    <div class="card" data-barang="Kampas Rem">⚙️ Kampas Rem</div>
+    <div class="card" data-barang="Shockbreaker">🧩 Shockbreaker</div>
+    <div class="card" data-barang="Wiper">🧽 Wiper</div>
+    <div class="card" data-barang="Master Rem">🧯 Master Rem</div>
+    <div class="card" data-barang="Pilok">🎨 Pilok</div>
+    <div class="card" data-barang="Lampu">💡 Lampu Depan/Belakang/Sen</div>
+    <div class="card" data-barang="Spion">🪞 Spion</div>
+    <div class="card" data-barang="Gir Set">⚙️ Gir Set</div>
+    <div class="card" data-barang="Rantai">⛓️ Rantai</div>
+    <div class="card" data-barang="Cairan Rem">🧴 Cairan Rem</div>
+    <div class="card" data-barang="Air Radiator">💧 Air Radiator</div>
+    <div class="card" data-barang="Spakbor">🪖 Spakbor</div>
+    <div class="card" data-barang="Kap Motor">🛵 Kap/Batok Motor</div>
+    <div class="card" data-barang="Kabel Rem">🔌 Kabel Rem</div>
+    <div class="card" data-barang="Tali Gas Vespa">🪢 Tali Gas Vespa</div>
+    <div class="card" data-barang="Busi">🔥 Busi</div>
+    <div class="card" data-barang="Kabel Gas">🔧 Kabel Gas</div>
+    <div class="card" data-barang="Aki">🔋 Aki</div>
+    <div class="card" data-barang="Step Belakang">🦶 Step Belakang</div>
+    <div class="card" data-barang="Handgrip">✋ Handgrip</div>
+    <div class="card" data-barang="Carb Cleaner">🧼 Carb Cleaner</div>
+    <div class="card" data-barang="Bersihin Karat">🧽 Bersihin Karat</div>
+    <div class="card" data-barang="Handle Rem">🖐️ Handle Rem</div>
+  </div>
+
+  <!-- Modal -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3 id="modalTitle">Tambah Transaksi</h3>
+      <form method="POST" action="/admin/add" id="transaksiForm">
+        <input type="hidden" name="jenis" value="income">
+        <input type="hidden" name="barang" id="barangInput">
+
+        <label>Tanggal:</label>
+        <input type="date" name="tanggal" required>
+
+        <div id="detailFields"></div>
+
+        <label>Jumlah Barang:</label>
+        <input type="number" name="jumlah_barang" required>
+
+        <label>Total Harga (Rp):</label>
+        <input type="number" name="jumlah" required>
+
+        <button type="submit">Simpan</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Aplikasi Bengkel | UTS IF451 - Advance Web</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+    const modal = document.getElementById("formModal");
+    const closeModal = document.getElementById("closeModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const barangInput = document.getElementById("barangInput");
+    const detailFields = document.getElementById("detailFields");
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const barang = card.dataset.barang;
+        barangInput.value = barang;
+        modalTitle.textContent = "Tambah " + barang;
+        detailFields.innerHTML = "";
+
+        // Kalau Oli, ada pilihan merek/tipe/ukuran
+        if (barang === "Oli") {
+          detailFields.innerHTML = `
+            <label>Merek:</label>
+            <select name="merek_oli" required>
+              <option value="">-- Pilih Merek --</option>
+              <option value="Castrol">Castrol</option>
+              <option value="Shell">Shell</option>
+              <option value="Federal">Federal</option>
+              <option value="Yamalube">Yamalube</option>
+            </select>
+
+            <label>Tipe:</label>
+            <select name="tipe_oli" required>
+              <option value="">-- Pilih Tipe --</option>
+              <option value="AT">AT</option>
+              <option value="Sport">Sport</option>
+              <option value="Racing">Racing</option>
+            </select>
+
+            <label>Ukuran (Liter):</label>
+            <select name="ukuran_oli" required>
+              <option value="">-- Pilih Ukuran --</option>
+              <option value="0.8">0.8L</option>
+              <option value="1">1L</option>
+              <option value="2">2L</option>
+            </select>
+          `;
+        }
+
+        modal.style.display = "flex";
+      });
+    });
+
+    closeModal.addEventListener("click", () => modal.style.display = "none");
+    window.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
+  </script>
+</body>
+</html>

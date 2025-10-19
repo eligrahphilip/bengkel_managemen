@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencatatan Pemasukan</title>
+  <link rel="stylesheet" href="/css/admin/admin-income.css">
+</head>
+<body>
+
+  <header>
+    <h2>Pencatatan Pemasukan</h2>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </header>
+
+  <main>
+    <div class="grid-container" id="barangGrid">
+      <!-- Semua daftar barang -->
+      <div class="card" data-barang="Oli">🛢️ Oli</div>
+      <div class="card" data-barang="Ban">🛞 Ban</div>
+      <div class="card" data-barang="Kampas Rem">⚙️ Kampas Rem</div>
+      <div class="card" data-barang="Shockbreaker">🧩 Shockbreaker</div>
+      <div class="card" data-barang="Lampu">💡 Lampu</div>
+      <div class="card" data-barang="Spion">🪞 Spion</div>
+      <div class="card" data-barang="Aki">🔋 Aki</div>
+      <div class="card" data-barang="Handgrip">✋ Handgrip</div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3 id="modalTitle">Tambah Transaksi</h3>
+      <form method="POST" action="/admin/add" id="transaksiForm">
+        <input type="hidden" name="jenis" value="income">
+        <input type="hidden" name="barang" id="barangInput">
+
+        <label>Tanggal:</label>
+        <input type="date" name="tanggal" required>
+
+        <div id="detailFields"></div>
+
+        <button type="submit">Simpan</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="exit-container">
+    <a href="/admin/menu" class="exit-btn">← Kembali ke Menu</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Aplikasi Bengkel | UTS IF451 - Advance Web</p>
+  </footer>
+
+  <script src="/js/admin/admin-income.js"></script>
+</body>
+</html>

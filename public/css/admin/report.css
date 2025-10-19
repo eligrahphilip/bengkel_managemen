@@ -1,0 +1,234 @@
+/* ========== BASE ========== */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f6f8;
+  margin: 0;
+  color: #1f293b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.app-title { font-size: 18px; font-weight: 600; margin: 0; }
+
+.navbar-menu {
+  display: flex; gap: 24px; list-style: none; margin: 0; padding: 0;
+}
+.navbar-menu a {
+  color: #cbd5e1; text-decoration: none; font-weight: 500;
+  transition: color .2s, border-bottom .2s;
+}
+.navbar-menu a:hover, .navbar-menu a.active {
+  color: #fff;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 4px;
+}
+.logout-btn {
+  background-color: #dc2626;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.logout-btn:hover { background-color: #b91c1c; }
+
+/* ========== MAIN ========== */
+.report-page {
+  flex: 1;
+  padding: 32px 48px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== FILTER TABS ========== */
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+.filter-tabs a {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: #e2e8f0;
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 500;
+  transition: .2s;
+}
+.filter-tabs a:hover { background: #cbd5e1; }
+.filter-tabs a.active { background: #2563eb; color: #fff; }
+
+/* ===== CUSTOM RANGE ===== */
+.custom-range input,
+.custom-range button {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+.custom-range button {
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+.custom-range button:hover { background: #1d4ed8; }
+
+/* ====== CHART CONTAINER ====== */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 30px auto 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 24px;
+  text-align: center;
+  transition: transform .25s ease;
+}
+.chart-container:hover {
+  transform: translateY(-6px);
+}
+.chart-center-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.chart-center-label h3 { font-size: 16px; margin: 0 0 4px; color: #475569; }
+.chart-center-label p { font-size: 24px; font-weight: 700; color: #1e293b; }
+
+/* ====== SUMMARY ====== */
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+.summary-card {
+  flex: 1;
+  min-width: 240px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transition: .25s ease;
+}
+.summary-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.summary-card h3 { font-size: 16px; color: #475569; margin: 0 0 8px; }
+.amount { font-size: 28px; font-weight: 700; }
+.income .amount { color: #22c55e; }
+.expense .amount { color: #ef4444; }
+.balance .amount { color: #3b82f6; }
+
+/* ====== ANALYSIS SECTION ====== */
+.analysis-section {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.analysis-section h2 {
+  font-size: 22px;
+  color: #1e293b;
+  margin: 0 0 24px;
+  text-align: center;
+}
+.analysis-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.analysis-card {
+  flex: 1;
+  min-width: 200px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.analysis-card h3 { font-size: 16px; color: #475569; margin: 0 0 8px; }
+.analysis-card p { font-size: 24px; font-weight: 600; color: #1e293b; }
+
+/* ====== BREAKDOWN TABLE ====== */
+.breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.breakdown-table th, .breakdown-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.breakdown-table th {
+  background: #1e293b;
+  color: #ffffff;
+  font-size: 14px;
+}
+.breakdown-table tr:hover { background: #f9fafb; }
+
+/* ====== SLIDER NAVIGATION ====== */
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+.slider-nav button {
+  background-color: #2563eb;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.slider-nav button:hover {
+  background-color: #1d4ed8;
+}
+#sectionIndicator {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: auto;
+}

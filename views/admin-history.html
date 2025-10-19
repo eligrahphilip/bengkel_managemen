@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Transaksi</title>
+  <link rel="stylesheet" href="/css/admin/admin-history.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="app-title">Bengkel Management</h1>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="/admin/menu">Dashboard</a></li>
+      <li><a href="/admin/income">Pemasukan</a></li>
+      <li><a href="/admin/expense">Pengeluaran</a></li>
+      <li><a href="/admin/history" class="active">Riwayat</a></li>
+      <li><a href="/report">Laporan</a></li>
+      <li><a href="/admin/stock">Kelola Stok</a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="history-page">
+    <h2 class="section-title">Riwayat Transaksi</h2>
+
+    <!-- Filter -->
+    <form method="GET" action="/admin/history" class="filter-form">
+      <div class="filter-group">
+        <label for="tanggal">Tanggal</label>
+        <input type="date" name="tanggal" id="tanggal">
+      </div>
+
+      <div class="filter-group">
+        <label for="barang">Barang</label>
+        <input type="text" name="barang" id="barang" placeholder="cth: Oli, Ban...">
+      </div>
+
+      <div class="filter-group">
+        <label for="jenis">Jenis</label>
+        <select name="jenis" id="jenis">
+          <option value="all" selected>Semua</option>
+          <option value="income">Pemasukan</option>
+          <option value="expense">Pengeluaran</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="kategori">Kategori</label>
+        <select name="kategori" id="kategori">
+          <option value="all" selected>Semua</option>
+          <option value="bahan_baku">Bahan Baku</option>
+          <option value="operasional">Operasional</option>
+          <option value="gaji">Gaji Karyawan</option>
+          <option value="lainnya">Lainnya</option>
+        </select>
+      </div>
+
+      <button type="submit" class="filter-btn">Filter</button>
+      <a href="/admin/history" class="reset-btn">Reset</a>
+    </form>
+
+    <!-- Ringkasan Total -->
+    <div class="summary">
+      <p>Total Pemasukan: Rp <span id="totalIncome">0</span></p>
+      <p>Total Pengeluaran: Rp <span id="totalExpense">0</span></p>
+    </div>
+
+    <!-- Tabel Riwayat -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Barang</th>
+            <th>Merek</th>
+            <th>Jumlah Terjual</th>
+            <th>Keterangan</th>
+            <th>Jenis</th>
+            <th>Kategori</th>
+            <th>Total (Rp)</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody">
+          <tr><td colspan="9" style="color: gray;">Memuat data...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Bengkel Management System — UTS IF451</p>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+<script>
+  const tbody = document.getElementById("historyBody");
+  const incomeEl = document.getElementById("totalIncome");
+  const expenseEl = document.getElementById("totalExpense");
+
+  // Ambil elemen form
+  const form = document.querySelector(".filter-form");
+
+  // Fungsi untuk memuat data dari server berdasarkan filter
+  async function loadTransactions() {
+    const params = new URLSearchParams(new FormData(form));
+    const res = await fetch(`/api/transactions?${params.toString()}`);
+    const transactions = await res.json();
+
+    if (!transactions || transactions.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="9" style="color: gray;">Tidak ada transaksi</td></tr>';
+      incomeEl.textContent = "0";
+      expenseEl.textContent = "0";
+      return;
+    }
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+    tbody.innerHTML = "";
+
+    transactions.forEach(t => {
+      const row = document.createElement("tr");
+      const jenisText = t.jenis === "income" ? "Pemasukan" : "Pengeluaran";
+      const jenisClass = t.jenis === "income" ? "income" : "expense";
+
+      if (t.jenis === "income") totalIncome += t.jumlah || 0;
+      else totalExpense += t.jumlah || 0;
+
+      row.innerHTML = `
+        <td>${t.tanggal || "-"}</td>
+        <td>${t.barang || "-"}</td>
+        <td>${t.merek || "-"}</td>
+        <td>${t.qty || "-"}</td>
+        <td>${t.keterangan || "-"}</td>
+        <td class="${jenisClass}">${jenisText}</td>
+        <td>${t.kategori ? t.kategori.replace("_", " ").toUpperCase() : "-"}</td>
+        <td>Rp ${(t.jumlah || 0).toLocaleString()}</td>
+        <td>
+          <button onclick="editTrans('${t.id}')" class="action-btn edit">Edit</button>
+          <button onclick="deleteTrans('${t.id}')" class="action-btn delete">Hapus</button>
+        </td>
+      `;
+      tbody.appendChild(row);
+    });
+
+    incomeEl.textContent = totalIncome.toLocaleString();
+    expenseEl.textContent = totalExpense.toLocaleString();
+  }
+
+  // Jalankan pertama kali saat halaman dibuka
+  loadTransactions();
+
+  // Jalankan lagi saat form di-submit
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    loadTransactions();
+  });
+
+  // Tombol edit & hapus
+  function editTrans(id) {
+    window.location.href = `/admin/edit-transaction/${id}`;
+  }
+
+  function deleteTrans(id) {
+    if (confirm("Yakin ingin menghapus transaksi ini?")) {
+      fetch(`/admin/delete-transaction/${id}`, { method: "DELETE" })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            alert("Transaksi dihapus!");
+            loadTransactions();
+          } else {
+            alert("Gagal menghapus: " + data.error);
+          }
+        });
+    }
+  }
+</script>
+
+</body>
+</html>

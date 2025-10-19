@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencatatan Pemasukan</title>
+  <link rel="stylesheet" href="/css/admin/admin-income.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="app-title">Bengkel Management</h1>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="/admin/menu">Dashboard</a></li>
+      <li><a href="/admin/income" class="active">Pemasukan</a></li>
+      <li><a href="/admin/expense">Pengeluaran</a></li>
+      <li><a href="/admin/history">Riwayat</a></li>
+      <li><a href="/report">Laporan</a></li>
+      <li><a href="/admin/stock">Kelola Stok</a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <input type="text" id="searchBarang" placeholder="Cari barang...">
+      </div>
+      <ul id="barangList" class="barang-list">
+        <li data-barang="Oli">Oli</li>
+        <li data-barang="Ban">Ban</li>
+        <li data-barang="Shockbreaker">Shockbreaker</li>
+        <li data-barang="Kampas Rem">Kampas Rem</li>
+        <li data-barang="Aki">Aki</li>
+      </ul>
+    </aside>
+
+    <!-- Form Area -->
+    <section class="content-area">
+      <h2 id="formTitle" class="section-title">Pilih Barang di Sebelah Kiri</h2>
+
+      <form id="transaksiForm" method="POST" action="/admin/add" class="form-card" style="display:none;">
+        <input type="hidden" name="jenis" value="income">
+        <input type="hidden" name="barang" id="barangInput">
+
+        <div class="form-group">
+          <label>Tanggal Transaksi</label>
+          <input type="date" name="tanggal" required>
+        </div>
+
+        <div id="detailFields"></div>
+
+        <div class="form-actions">
+          <button type="submit">Simpan Transaksi</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Bengkel Management System — UTS IF451</p>
+  </footer>
+
+  <script src="/js/admin/admin-income.js"></script>
+</body>
+</html>

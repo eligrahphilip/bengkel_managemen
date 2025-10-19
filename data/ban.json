@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "merek": "Swallow",
+    "tipe": "Viper",
+    "ukuran": "80/90-17",
+    "harga": 220000,
+    "stok": 13
+  },
+  {
+    "id": 2,
+    "merek": "Swallow",
+    "tipe": "Viper",
+    "ukuran": "90/80-17",
+    "harga": 240000,
+    "stok": 10
+  },
+  {
+    "id": 3,
+    "merek": "Swallow",
+    "tipe": "Viper",
+    "ukuran": "100/80-17",
+    "harga": 285000,
+    "stok": 8
+  },
+  {
+    "id": 4,
+    "merek": "Swallow",
+    "tipe": "Stream Pro",
+    "ukuran": "90/80-17",
+    "harga": 270000,
+    "stok": 9
+  },
+  {
+    "id": 5,
+    "merek": "Swallow",
+    "tipe": "Stream Pro",
+    "ukuran": "100/80-17",
+    "harga": 315000,
+    "stok": 7
+  },
+  {
+    "id": 6,
+    "merek": "Swallow",
+    "tipe": "Stream Pro",
+    "ukuran": "110/70-17",
+    "harga": 350000,
+    "stok": 5
+  },
+  {
+    "id": 7,
+    "merek": "Swallow",
+    "tipe": "Sea Hawk",
+    "ukuran": "90/80-17",
+    "harga": 290000,
+    "stok": 6
+  },
+  {
+    "id": 8,
+    "merek": "Swallow",
+    "tipe": "Sea Hawk",
+    "ukuran": "100/80-17",
+    "harga": 335000,
+    "stok": 4
+  },
+  {
+    "id": 9,
+    "merek": "IRC",
+    "tipe": "NR77",
+    "ukuran": "80/90-17",
+    "harga": 230000,
+    "stok": 15
+  },
+  {
+    "id": 10,
+    "merek": "IRC",
+    "tipe": "NR77",
+    "ukuran": "90/80-17",
+    "harga": 260000,
+    "stok": 12
+  },
+  {
+    "id": 11,
+    "merek": "IRC",
+    "tipe": "NR77",
+    "ukuran": "100/80-17",
+    "harga": 305000,
+    "stok": 10
+  },
+  {
+    "id": 12,
+    "merek": "IRC",
+    "tipe": "RW Series",
+    "ukuran": "90/80-17",
+    "harga": 280000,
+    "stok": 8
+  },
+  {
+    "id": 13,
+    "merek": "IRC",
+    "tipe": "RW Series",
+    "ukuran": "100/80-17",
+    "harga": 325000,
+    "stok": 6
+  },
+  {
+    "id": 14,
+    "merek": "IRC",
+    "tipe": "RW Series",
+    "ukuran": "120/70-17",
+    "harga": 450000,
+    "stok": 3
+  },
+  {
+    "id": 15,
+    "merek": "Honda",
+    "tipe": "Original",
+    "ukuran": "80/90-17",
+    "harga": 210000,
+    "stok": 18
+  },
+  {
+    "id": 16,
+    "merek": "Honda",
+    "tipe": "Original",
+    "ukuran": "90/80-17",
+    "harga": 240000,
+    "stok": 15
+  },
+  {
+    "id": 17,
+    "merek": "Honda",
+    "tipe": "Original",
+    "ukuran": "100/80-17",
+    "harga": 285000,
+    "stok": 12
+  },
+  {
+    "id": 18,
+    "merek": "Honda",
+    "tipe": "Premium",
+    "ukuran": "90/80-17",
+    "harga": 275000,
+    "stok": 8
+  },
+  {
+    "id": 19,
+    "merek": "Honda",
+    "tipe": "Premium",
+    "ukuran": "100/80-17",
+    "harga": 320000,
+    "stok": 6
+  },
+  {
+    "id": 20,
+    "merek": "Honda",
+    "tipe": "Premium",
+    "ukuran": "110/70-17",
+    "harga": 370000,
+    "stok": 4
+  }
+]

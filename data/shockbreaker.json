@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "merek": "YSS",
+    "tipe": "Standard",
+    "ukuran": "Vario 125",
+    "harga": 450000,
+    "stok": 8
+  },
+  {
+    "id": 2,
+    "merek": "YSS",
+    "tipe": "Standard",
+    "ukuran": "Beat",
+    "harga": 420000,
+    "stok": 10
+  },
+  {
+    "id": 3,
+    "merek": "YSS",
+    "tipe": "Sport",
+    "ukuran": "NMax 155",
+    "harga": 650000,
+    "stok": 6
+  },
+  {
+    "id": 4,
+    "merek": "YSS",
+    "tipe": "Sport",
+    "ukuran": "PCX 160",
+    "harga": 680000,
+    "stok": 5
+  },
+  {
+    "id": 5,
+    "merek": "YSS",
+    "tipe": "Racing",
+    "ukuran": "R15",
+    "harga": 850000,
+    "stok": 4
+  },
+  {
+    "id": 6,
+    "merek": "Ohlins",
+    "tipe": "Street",
+    "ukuran": "NMax 155",
+    "harga": 1200000,
+    "stok": 3
+  },
+  {
+    "id": 7,
+    "merek": "Ohlins",
+    "tipe": "Street",
+    "ukuran": "PCX 160",
+    "harga": 1250000,
+    "stok": 3
+  },
+  {
+    "id": 8,
+    "merek": "Ohlins",
+    "tipe": "Racing",
+    "ukuran": "CBR250RR",
+    "harga": 1800000,
+    "stok": 2
+  },
+  {
+    "id": 9,
+    "merek": "Ohlins",
+    "tipe": "Racing",
+    "ukuran": "Ninja 250",
+    "harga": 1900000,
+    "stok": 2
+  },
+  {
+    "id": 10,
+    "merek": "Showa",
+    "tipe": "Standard",
+    "ukuran": "Scoopy",
+    "harga": 380000,
+    "stok": 12
+  },
+  {
+    "id": 11,
+    "merek": "Showa",
+    "tipe": "Standard",
+    "ukuran": "Genio",
+    "harga": 400000,
+    "stok": 10
+  },
+  {
+    "id": 12,
+    "merek": "Showa",
+    "tipe": "Sport",
+    "ukuran": "Vario 160",
+    "harga": 550000,
+    "stok": 7
+  },
+  {
+    "id": 13,
+    "merek": "Showa",
+    "tipe": "Sport",
+    "ukuran": "Aerox 155",
+    "harga": 600000,
+    "stok": 6
+  },
+  {
+    "id": 14,
+    "merek": "KYB",
+    "tipe": "Standard",
+    "ukuran": "Mio Soul",
+    "harga": 350000,
+    "stok": 15
+  },
+  {
+    "id": 15,
+    "merek": "KYB",
+    "tipe": "Standard",
+    "ukuran": "Jupiter MX",
+    "harga": 420000,
+    "stok": 8
+  },
+  {
+    "id": 16,
+    "merek": "KYB",
+    "tipe": "Sport",
+    "ukuran": "X-Ride",
+    "harga": 480000,
+    "stok": 7
+  },
+  {
+    "id": 17,
+    "merek": "Progrip",
+    "tipe": "Standard",
+    "ukuran": "Beat Street",
+    "harga": 320000,
+    "stok": 18
+  },
+  {
+    "id": 18,
+    "merek": "Progrip",
+    "tipe": "Sport",
+    "ukuran": "Vario 150",
+    "harga": 520000,
+    "stok": 8
+  },
+  {
+    "id": 19,
+    "merek": "Progrip",
+    "tipe": "Racing",
+    "ukuran": "Satria F150",
+    "harga": 750000,
+    "stok": 5
+  },
+  {
+    "id": 20,
+    "merek": "Wilbers",
+    "tipe": "Premium",
+    "ukuran": "TMAX 560",
+    "harga": 2500000,
+    "stok": 2
+  }
+]

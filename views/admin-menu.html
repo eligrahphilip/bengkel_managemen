@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Admin - Bengkel Management</title>
+  <link rel="stylesheet" href="/css/admin/admin-menu.css" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="app-title">Bengkel Management</h1>
+    </div>
+    <div class="navbar-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ===== DASHBOARD HEADER ===== -->
+  <div class="dashboard-header">
+    <h1>Dashboard Admin</h1>
+    <p>Kelola seluruh operasional bengkel dengan mudah</p>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <div class="menu-container">
+      <!-- Baris 1 - 3 Menu -->
+      <div class="row row-1">
+        <a href="/admin/income" class="menu-card">
+          <span>💰</span>
+          <p>Pemasukan</p>
+          <div class="description">Catat penjualan & pendapatan</div>
+        </a>
+
+        <a href="/admin/expense" class="menu-card">
+          <span>💸</span>
+          <p>Pengeluaran</p>
+          <div class="description">Keluar biaya operasional</div>
+        </a>
+
+        <a href="/admin/history" class="menu-card">
+          <span>📜</span>
+          <p>Riwayat Transaksi</p>
+          <div class="description">Lihat history lengkap</div>
+        </a>
+      </div>
+
+      <!-- Baris 2 - 2 Menu di Tengah -->
+      <div class="row row-2">
+        <a href="/report" class="menu-card">
+          <span>📊</span>
+          <p>Laporan Keuangan</p>
+          <div class="description">Analisis & report keuangan</div>
+        </a>
+
+        <a href="/admin/stock" class="menu-card">
+          <span>📦</span>
+          <p>Kelola Stok Barang</p>
+          <div class="description">Management inventory</div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Bengkel Management System — UTS IF451</p>
+  </footer>
+</body>
+</html>

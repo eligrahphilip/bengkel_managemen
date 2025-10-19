@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencatatan Pengeluaran</title>
+  <link rel="stylesheet" href="/css/admin/admin-expense.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="app-title">Bengkel Management</h1>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="/admin/menu">Dashboard</a></li>
+      <li><a href="/admin/income">Pemasukan</a></li>
+      <li><a href="/admin/expense" class="active">Pengeluaran</a></li>
+      <li><a href="/admin/history">Riwayat</a></li>
+      <li><a href="/report">Laporan</a></li>
+      <li><a href="/admin/stock">Kelola Stok</a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <section class="content-area">
+      <h2 class="section-title">Pencatatan Pengeluaran</h2>
+
+      <form method="POST" action="/admin/add" class="form-card">
+        <input type="hidden" name="jenis" value="expense">
+
+        <div class="form-group">
+          <label>Tanggal Pengeluaran</label>
+          <input type="date" name="tanggal" required>
+        </div>
+
+        <div class="form-group">
+          <label>Keterangan</label>
+          <input type="text" name="keterangan" placeholder="Contoh: Pembelian alat" required>
+        </div>
+
+        <div class="form-group">
+          <label>Jumlah (Rp)</label>
+          <input type="number" name="jumlah" placeholder="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kategori</label>
+          <select name="kategori" required>
+            <option value="" disabled selected>Pilih Kategori</option>
+            <option value="bahan_baku">Bahan Baku</option>
+            <option value="operasional">Operasional</option>
+            <option value="gaji">Gaji Karyawan</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Simpan Pengeluaran</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Bengkel Management System — UTS IF451</p>
+  </footer>
+</body>
+</html>

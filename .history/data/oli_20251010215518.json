@@ -1,0 +1,7 @@
+[
+  { "merek": "Castrol", "tipe": "AT", "ukuran": "0.8L", "harga": 48000 },
+  { "merek": "Castrol", "tipe": "Sport", "ukuran": "1L", "harga": 55000 },
+  { "merek": "Yamalube", "tipe": "Sport", "ukuran": "1L", "harga": 53000 },
+  { "merek": "Federal", "tipe": "Racing", "ukuran": "1L", "harga": 60000 },
+  { "merek": "Shell", "tipe": "AT", "ukuran": "1L", "harga": 52000 }
+]

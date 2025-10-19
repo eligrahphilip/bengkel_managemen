@@ -1,0 +1,354 @@
+[
+  {
+    "merek": "MPX",
+    "tipe": "2",
+    "ukuran": "0.8L",
+    "harga": 38000,
+    "id": 1760120966001,
+    "stok": 3
+  },
+  {
+    "merek": "MPX",
+    "tipe": "1",
+    "ukuran": "0.8L",
+    "harga": 37000,
+    "id": 1760120966002,
+    "stok": 7
+  },
+  {
+    "merek": "SPX",
+    "tipe": "2",
+    "ukuran": "0.8L",
+    "harga": 45000,
+    "id": 1760120966003,
+    "stok": 10
+  },
+  {
+    "merek": "SPX",
+    "tipe": "1",
+    "ukuran": "0.8L",
+    "harga": 47000,
+    "id": 1760120966004,
+    "stok": 8
+  },
+  {
+    "merek": "SPX",
+    "tipe": "2",
+    "ukuran": "0.65L",
+    "harga": 42000,
+    "id": 1760120966005,
+    "stok": 7
+  },
+  {
+    "merek": "SPX",
+    "tipe": "3",
+    "ukuran": "0.8L",
+    "harga": 49000,
+    "id": 1760120966006,
+    "stok": 6
+  },
+  {
+    "merek": "MPX1",
+    "tipe": "",
+    "ukuran": "1.2L",
+    "harga": 52000,
+    "id": 1760120966007,
+    "stok": 9
+  },
+  {
+    "merek": "Yamalube",
+    "tipe": "Super Matic",
+    "ukuran": "1L",
+    "harga": 48000,
+    "id": 1760120966008,
+    "stok": 11
+  },
+  {
+    "merek": "Yamalube",
+    "tipe": "Silver",
+    "ukuran": "1L",
+    "harga": 46000,
+    "id": 1760120966009,
+    "stok": 13
+  },
+  {
+    "merek": "Yamalube",
+    "tipe": "Sport",
+    "ukuran": "1L",
+    "harga": 50000,
+    "id": 1760120966010,
+    "stok": 10
+  },
+  {
+    "merek": "Enduro",
+    "tipe": "Matic",
+    "ukuran": "0.8L",
+    "harga": 40000,
+    "id": 1760120966011,
+    "stok": 14
+  },
+  {
+    "merek": "Enduro",
+    "tipe": "Matic",
+    "ukuran": "1.1L",
+    "harga": 48000,
+    "id": 1760120966012,
+    "stok": 9
+  },
+  {
+    "merek": "Enduro",
+    "tipe": "Racing",
+    "ukuran": "1.1L",
+    "harga": 52000,
+    "id": 1760120966013,
+    "stok": 6
+  },
+  {
+    "merek": "Enduro",
+    "tipe": "4T",
+    "ukuran": "0.8L",
+    "harga": 42000,
+    "id": 1760120966014,
+    "stok": 10
+  },
+  {
+    "merek": "Enduro",
+    "tipe": "4T",
+    "ukuran": "1.1L",
+    "harga": 50000,
+    "id": 1760120966015,
+    "stok": 12
+  },
+  {
+    "merek": "Federal",
+    "tipe": "Matic",
+    "ukuran": "0.8L",
+    "harga": 42000,
+    "id": 1760120966016,
+    "stok": 13
+  },
+  {
+    "merek": "Federal",
+    "tipe": "Ultratec",
+    "ukuran": "0.8L",
+    "harga": 44000,
+    "id": 1760120966017,
+    "stok": 10
+  },
+  {
+    "merek": "Federal",
+    "tipe": "Ultratec",
+    "ukuran": "1.1L",
+    "harga": 49000,
+    "id": 1760120966018,
+    "stok": 8
+  },
+  {
+    "merek": "Federal",
+    "tipe": "Ultratec XX",
+    "ukuran": "1.1L",
+    "harga": 52000,
+    "id": 1760120966019,
+    "stok": 7
+  },
+  {
+    "merek": "Federal",
+    "tipe": "Racing",
+    "ukuran": "1L",
+    "harga": 55000,
+    "id": 1760120966020,
+    "stok": 5
+  },
+  {
+    "merek": "Shell",
+    "tipe": "AX7 Matic",
+    "ukuran": "0.8L",
+    "harga": 46000,
+    "id": 1760120966021,
+    "stok": 9
+  },
+  {
+    "merek": "Shell",
+    "tipe": "AX7 Matic",
+    "ukuran": "1.1L",
+    "harga": 52000,
+    "id": 1760120966022,
+    "stok": 6
+  },
+  {
+    "merek": "Shell",
+    "tipe": "AX5 Matic",
+    "ukuran": "0.8L",
+    "harga": 41000,
+    "id": 1760120966023,
+    "stok": 11
+  },
+  {
+    "merek": "Motul",
+    "tipe": "2T",
+    "ukuran": "0.8L",
+    "harga": 49000,
+    "id": 1760120966024,
+    "stok": 8
+  },
+  {
+    "merek": "Motul",
+    "tipe": "Matic",
+    "ukuran": "1L",
+    "harga": 52000,
+    "id": 1760120966025,
+    "stok": 7
+  },
+  {
+    "merek": "Motul",
+    "tipe": "Biasa",
+    "ukuran": "0.8L",
+    "harga": 47000,
+    "id": 1760120966026,
+    "stok": 6
+  },
+  {
+    "merek": "Mesran",
+    "tipe": "Super",
+    "ukuran": "0.8L",
+    "harga": 40000,
+    "id": 1760120966027,
+    "stok": 9
+  },
+  {
+    "merek": "Mesran",
+    "tipe": "Super",
+    "ukuran": "1L",
+    "harga": 45000,
+    "id": 1760120966028,
+    "stok": 8
+  },
+  {
+    "merek": "Evalub",
+    "tipe": "2T",
+    "ukuran": "1L",
+    "harga": 42000,
+    "id": 1760120966029,
+    "stok": 10
+  },
+  {
+    "merek": "Evalub",
+    "tipe": "4T",
+    "ukuran": "1L",
+    "harga": 43000,
+    "id": 1760120966030,
+    "stok": 10
+  },
+  {
+    "merek": "Castrol",
+    "tipe": "Matic",
+    "ukuran": "0.8L",
+    "harga": 46000,
+    "id": 1760120966031,
+    "stok": 9
+  },
+  {
+    "merek": "Castrol",
+    "tipe": "Biasa",
+    "ukuran": "0.8L",
+    "harga": 43000,
+    "id": 1760120966032,
+    "stok": 7
+  },
+  {
+    "merek": "Castrol",
+    "tipe": "Activ",
+    "ukuran": "1L",
+    "harga": 49000,
+    "id": 1760120966033,
+    "stok": 8
+  },
+  {
+    "merek": "SGO",
+    "tipe": "Matic",
+    "ukuran": "0.8L",
+    "harga": 42000,
+    "id": 1760120966034,
+    "stok": 10
+  },
+  {
+    "merek": "SGO",
+    "tipe": "Biasa",
+    "ukuran": "1L",
+    "harga": 46000,
+    "id": 1760120966035,
+    "stok": 9
+  },
+  {
+    "merek": "SGO",
+    "tipe": "Biasa",
+    "ukuran": "0.8L",
+    "harga": 42000,
+    "id": 1760120966036,
+    "stok": 8
+  },
+  {
+    "merek": "Gulf",
+    "tipe": "Vespa",
+    "ukuran": "1L",
+    "harga": 50000,
+    "id": 1760120966037,
+    "stok": 6
+  },
+  {
+    "merek": "Yamalube",
+    "tipe": "Kecil",
+    "ukuran": "1L",
+    "harga": 47000,
+    "id": 1760120966038,
+    "stok": 10
+  },
+  {
+    "merek": "Yamalube",
+    "tipe": "Besar",
+    "ukuran": "1L",
+    "harga": 52000,
+    "id": 1760120966039,
+    "stok": 8
+  },
+  {
+    "merek": "SGG",
+    "tipe": "",
+    "ukuran": "1L",
+    "harga": 48000,
+    "id": 1760120966040,
+    "stok": 7
+  },
+  {
+    "merek": "Medtran",
+    "tipe": "S",
+    "ukuran": "1L",
+    "harga": 50000,
+    "id": 1760120966041,
+    "stok": 9
+  },
+  {
+    "merek": "Medtran",
+    "tipe": "Sx",
+    "ukuran": "1L",
+    "harga": 52000,
+    "id": 1760120966042,
+    "stok": 8
+  },
+  {
+    "merek": "Repsol",
+    "tipe": "Matic",
+    "ukuran": "0.8L",
+    "harga": 55000,
+    "id": 1760120966043,
+    "stok": 7
+  },
+  {
+    "merek": "Repsol",
+    "tipe": "Racing",
+    "ukuran": "1L",
+    "harga": 60000,
+    "id": 1760120966044,
+    "stok": 6
+  }
+]

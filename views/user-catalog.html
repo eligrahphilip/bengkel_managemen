@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Bengkel</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Halo, <span id="username">User</span></h2>
+  <a href="/logout">Logout</a>
+  <h3>Katalog Barang</h3>
+  <ul>
+    <li>Oli Shell 1L</li>
+    <li>Oli Castrol 2L</li>
+    <li>Filter Oli</li>
+    <li>Busi NGK</li>
+  </ul>
+
+  <script>
+    // Ambil nama user dari localStorage atau API
+    const user = JSON.parse(localStorage.getItem("user") || '{"username":"User"}');
+    document.getElementById("username").textContent = user.username;
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelola Stok Barang</title>
+  <link rel="stylesheet" href="/css/admin/admin-income.css">
+  <link rel="stylesheet" href="/css/admin/admin-stock.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="app-title">Bengkel Management</h1>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="/admin/menu">Dashboard</a></li>
+      <li><a href="/admin/income">Pemasukan</a></li>
+      <li><a href="/admin/expense">Pengeluaran</a></li>
+      <li><a href="/admin/history">Riwayat</a></li>
+      <li><a href="/report">Laporan</a></li>
+      <li><a href="/admin/stock" class="active">Kelola Stok</a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <input type="text" id="searchBarang" placeholder="Cari kategori...">
+      </div>
+      <ul id="barangList" class="barang-list">
+        <li data-barang="Oli">Oli</li>
+        <li data-barang="Ban">Ban</li>
+        <li data-barang="Shockbreaker">Shockbreaker</li>
+        <li data-barang="Kampas Rem">Kampas Rem</li>
+        <li data-barang="Aki">Aki</li>
+      </ul>
+    </aside>
+
+    <!-- Content Area -->
+    <section class="content-area">
+      <!-- Header dengan tombol Add Stock -->
+      <div class="header-actions">
+        <h2 class="header-title" id="stockTitle">Pilih Kategori di Sebelah Kiri</h2>
+        <div class="action-buttons">
+          <button id="toggleFormBtn" class="btn-primary" style="display: none;">➕ Tambah Stok Baru</button>
+        </div>
+      </div>
+
+      <!-- Form Section (Awalnya hidden) -->
+      <div id="formSection" style="display: none;">
+        <div class="form-header">
+          <h3 class="form-title" id="formTitle">Tambah Stok Baru</h3>
+        </div>
+        <form class="form-card">
+          <input type="hidden" name="barang" id="barangInput">
+          <!-- Form fields akan diisi secara dinamis oleh JavaScript -->
+        </form>
+      </div>
+
+      <!-- Stock Table (Awalnya hidden) -->
+      <div id="stokSection" style="display:none;">
+        <div class="table-container">
+          <table id="stokTable">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Merek</th>
+                <th>Tipe</th>
+                <th>Ukuran</th>
+                <th>Harga (Rp)</th>
+                <th>Stok</th>
+                <th>Edit Stok</th>
+                <th>Aksi</th>
+                <th>Hapus</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Bengkel Management System — UTS IF451</p>
+  </footer>
+
+  <script src="/js/admin/admin-stock.js"></script>
+</body>
+</html>

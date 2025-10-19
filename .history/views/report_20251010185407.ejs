@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Laporan Transaksi</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Laporan Transaksi</h2>
+  <a href="/admin">← Kembali</a>
+  <table>
+    <tr>
+      <th>Tanggal</th>
+      <th>Barang</th>
+      <th>Merek</th>
+      <th>Tipe</th>
+      <th>Ukuran</th>
+      <th>Jumlah</th>
+      <th>Harga</th>
+      <th>Total</th>
+    </tr>
+    <% transactions.forEach(t => { %>
+      <tr>
+        <td><%= t.tanggal %></td>
+        <td><%= t.barang %></td>
+        <td><%= t.merek %></td>
+        <td><%= t.tipe %></td>
+        <td><%= t.ukuran %></td>
+        <td><%= t.jumlah %></td>
+        <td><%= t.harga.toLocaleString() %></td>
+        <td><%= t.total.toLocaleString() %></td>
+      </tr>
+    <% }) %>
+  </table>
+  <h3>Total Penjualan: Rp <%= total.toLocaleString() %></h3>
+</body>
+</html>

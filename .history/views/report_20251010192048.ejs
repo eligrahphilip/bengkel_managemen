@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Laporan Keuangan</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>📊 Laporan Keuangan</h2>
+  <table>
+    <tr>
+      <th>Tanggal</th>
+      <th>Keterangan</th>
+      <th>Jenis</th>
+      <th>Jumlah (Rp)</th>
+    </tr>
+    <% transactions.forEach(t => { %>
+      <tr>
+        <td><%= t.tanggal %></td>
+        <td><%= t.keterangan %></td>
+        <td><%= t.jenis === "income" ? "Pemasukan" : "Pengeluaran" %></td>
+        <td><%= t.jumlah.toLocaleString() %></td>
+      </tr>
+    <% }) %>
+  </table>
+
+  <h3>Total Pemasukan: Rp <%= totalIncome.toLocaleString() %></h3>
+  <h3>Total Pengeluaran: Rp <%= totalExpense.toLocaleString() %></h3>
+  <h3>Saldo Akhir: Rp <%= saldo.toLocaleString() %></h3>
+
+  <a href="/admin/menu">← Kembali</a>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* ===== BASE ===== */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f6f8;
+  margin: 0;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.app-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 4px;
+}
+
+.logout-btn {
+  background-color: #dc2626;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  color: #1e293b;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* ===== FILTER FORM ===== */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  align-items: flex-end;  /* Align button ke bawah biar rapi */
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #1e293b;
+}
+
+input[type="date"],
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+select {  /* Styling untuk select jenis, biar match dengan input */
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s;
+  background-color: #ffffff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+/* Perbaikan Button: Lebih profesional (pill-shaped, shadow, transition) */
+.filter-btn,
+.reset-btn {
+  padding: 10px 24px;           /* Padding lebih lebar untuk bentuk lonjong */
+  border-radius: 50px;          /* Pill-shaped: sangat rounded untuk look modern */
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;    /* Smooth transition untuk hover */
+  min-width: 120px;             /* Lebar minimal biar konsisten */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow untuk depth */
+  border: none;
+}
+
+.filter-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.filter-btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);  /* Shadow lebih dalam pada hover */
+  transform: translateY(-1px);            /* Efek lift ringan */
+}
+
+.reset-btn {
+  background-color: #f3f4f6;
+  color: #1e293b;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;  /* Border subtle untuk reset */
+}
+
+.reset-btn:hover {
+  background-color: #e2e8f0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+/* Tambahan: Styling untuk Summary */
+.summary {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.summary p {
+  margin: 5px 0;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ===== TABLE ===== */
+.table-container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background-color: #1e293b;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+tr:hover {
+  background-color: #f9fafb;
+}
+
+.income {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.expense {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* Tambahan: Styling untuk Action Buttons */
+.action-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.action-btn.edit {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.action-btn.edit:hover {
+  background-color: #d97706;
+}
+
+.action-btn.delete {
+  background-color: #dc2626;
+  color: white;
+}
+
+.action-btn.delete:hover {
+  background-color: #b91c1c;
+}
+
+/* ===== BACK LINK ===== */
+.back-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-link a {
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: auto;
+}

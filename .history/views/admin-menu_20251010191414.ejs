@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu Utama Admin</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Halo, <%= user.username %> 👋</h2>
+  <p>Pilih modul yang ingin kamu buka:</p>
+  <ul>
+    <li><a href="/admin/income">💰 Pemasukan</a></li>
+    <li><a href="/admin/expense">💸 Pengeluaran</a></li>
+    <li><a href="/admin/history">📜 Riwayat Transaksi</a></li>
+    <li><a href="/report">📊 Laporan Keuangan</a></li>
+  </ul>
+  <a href="/logout">Logout</a>
+</body>
+</html>
